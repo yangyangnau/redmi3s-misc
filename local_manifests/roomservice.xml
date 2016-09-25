@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote fetch="https://github.com/" name="mygit" />
+  <project name="yangyangnau/android_kernel_xiaomi_msm8937" path="kernel/xiaomi/msm8937" remote="mygit" revision="cm-13.0" />
+  <project name="yangyangnau/android_device_xiaomi_land" path="device/xiaomi/land" remote="mygit" revision="cm-13.0" />
+  <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" />
+</manifest>

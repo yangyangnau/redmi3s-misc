@@ -1,0 +1,48 @@
+diff -Naur cm-13.0.orig/hardware/qcom/display-caf/msm8937/sdm/libs/core/fb/hw_device.cpp cm-13.0.new/hardware/qcom/display-caf/msm8937/sdm/libs/core/fb/hw_device.cpp
+--- cm-13.0.orig/hardware/qcom/display-caf/msm8937/sdm/libs/core/fb/hw_device.cpp	2016-08-15 15:44:45.000000000 +0800
++++ cm-13.0.new/hardware/qcom/display-caf/msm8937/sdm/libs/core/fb/hw_device.cpp	2016-08-15 15:44:45.000000000 +0800
+@@ -517,19 +517,6 @@
+   case kFormatRGBA8888Ubwc:             *target = MDP_RGBA_8888_UBWC;    break;
+   case kFormatRGBX8888Ubwc:             *target = MDP_RGBX_8888_UBWC;    break;
+   case kFormatBGR565Ubwc:               *target = MDP_RGB_565_UBWC;      break;
+-  case kFormatYCbCr420SPVenusUbwc:      *target = MDP_Y_CBCR_H2V2_UBWC;  break;
+-  case kFormatRGBA1010102:              *target = MDP_RGBA_1010102;      break;
+-  case kFormatARGB2101010:              *target = MDP_ARGB_2101010;      break;
+-  case kFormatRGBX1010102:              *target = MDP_RGBX_1010102;      break;
+-  case kFormatXRGB2101010:              *target = MDP_XRGB_2101010;      break;
+-  case kFormatBGRA1010102:              *target = MDP_BGRA_1010102;      break;
+-  case kFormatABGR2101010:              *target = MDP_ABGR_2101010;      break;
+-  case kFormatBGRX1010102:              *target = MDP_BGRX_1010102;      break;
+-  case kFormatXBGR2101010:              *target = MDP_XBGR_2101010;      break;
+-  case kFormatRGBA1010102Ubwc:          *target = MDP_RGBA_1010102_UBWC; break;
+-  case kFormatRGBX1010102Ubwc:          *target = MDP_RGBX_1010102_UBWC; break;
+-  case kFormatYCbCr420P010:             *target = MDP_Y_CBCR_H2V2_P010;  break;
+-  case kFormatYCbCr420TP10Ubwc:         *target = MDP_Y_CBCR_H2V2_TP10_UBWC; break;
+   default:
+     DLOGE("Unsupported format type %d", source);
+     return kErrorParameters;
+diff -Naur cm-13.0.orig/hardware/qcom/display-caf/msm8937/sdm/libs/core/fb/hw_info.cpp cm-13.0.new/hardware/qcom/display-caf/msm8937/sdm/libs/core/fb/hw_info.cpp
+--- cm-13.0.orig/hardware/qcom/display-caf/msm8937/sdm/libs/core/fb/hw_info.cpp	2016-08-15 15:44:45.000000000 +0800
++++ cm-13.0.new/hardware/qcom/display-caf/msm8937/sdm/libs/core/fb/hw_info.cpp	2016-08-15 15:44:45.000000000 +0800
+@@ -454,21 +454,7 @@
+   case MDP_Y_CRCB_H1V2:            return kFormatYCrCb422H1V2SemiPlanar;
+   case MDP_Y_CBCR_H2V1:            return kFormatYCbCr422H2V1SemiPlanar;
+   case MDP_Y_CRCB_H2V1:            return kFormatYCrCb422H2V1SemiPlanar;
+-  case MDP_Y_CBCR_H2V2_UBWC:       return kFormatYCbCr420SPVenusUbwc;
+-  case MDP_Y_CRCB_H2V2_VENUS:      return kFormatYCrCb420SemiPlanarVenus;
+   case MDP_YCBYCR_H2V1:            return kFormatYCbCr422H2V1Packed;
+-  case MDP_RGBA_1010102:           return kFormatRGBA1010102;
+-  case MDP_ARGB_2101010:           return kFormatARGB2101010;
+-  case MDP_RGBX_1010102:           return kFormatRGBX1010102;
+-  case MDP_XRGB_2101010:           return kFormatXRGB2101010;
+-  case MDP_BGRA_1010102:           return kFormatBGRA1010102;
+-  case MDP_ABGR_2101010:           return kFormatABGR2101010;
+-  case MDP_BGRX_1010102:           return kFormatBGRX1010102;
+-  case MDP_XBGR_2101010:           return kFormatXBGR2101010;
+-  case MDP_RGBA_1010102_UBWC:      return kFormatRGBA1010102Ubwc;
+-  case MDP_RGBX_1010102_UBWC:      return kFormatRGBX1010102Ubwc;
+-  case MDP_Y_CBCR_H2V2_P010:       return kFormatYCbCr420P010;
+-  case MDP_Y_CBCR_H2V2_TP10_UBWC:  return kFormatYCbCr420TP10Ubwc;
+   default:                         return kFormatInvalid;
+   }
+ }

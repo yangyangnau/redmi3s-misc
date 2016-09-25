@@ -1,0 +1,12 @@
+diff -Naur cm-13.0.orig/hardware/qcom/audio-caf/msm8937/hal/voice_extn/voice_extn.h cm-13.0.new/hardware/qcom/audio-caf/msm8937/hal/voice_extn/voice_extn.h
+--- cm-13.0.orig/hardware/qcom/audio-caf/msm8937/hal/voice_extn/voice_extn.h	2016-08-15 15:44:34.000000000 +0800
++++ cm-13.0.new/hardware/qcom/audio-caf/msm8937/hal/voice_extn/voice_extn.h	2016-08-15 15:44:34.000000000 +0800
+@@ -248,7 +248,7 @@
+     return false;
+ }
+ 
+-static bool voice_extn_compress_voip_is_active(struct audio_device *adev __unused)
++static bool voice_extn_compress_voip_is_active(const struct audio_device *adev __unused)
+ {
+     ALOGE("%s: COMPRESS_VOIP_ENABLED is not defined", __func__);
+     return false;
